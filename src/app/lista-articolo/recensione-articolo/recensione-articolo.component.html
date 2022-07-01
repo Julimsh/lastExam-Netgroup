@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="mt-5">
+        <h3> Exam Shop! </h3>
+        <p>Compra gli articoli che vuoi, comodamente a casa tua!</p>
+    </div>
+</div>
+
+<a class="nav-link disable btn btn-success mt-5 ms-5 mb-4 text-white" style="width: 15%;" [routerLink]="['/lista-articolo/nuovaRecensione']">Lascia una Valutazione!</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Testo</th>
+            <th scope="col">Articolo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let articolo of articoli; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ articolo.recensione?.id }}</td>
+            <td>{{ articolo.recensione?.testo}}</td>
+            <td>{{ articolo.recensione?.articolo}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<div class="col-lg-2 mt-5">
+    <div class="d-grid">
+        <div class="btn btn-primary mb-3" (click)="goBack()">Annulla</div>
+    </div>
+</div>

@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  apiUrl: 'http://localhost:8080/api',
 };
+// ATTENZIONE: questo è un URL Simbolico. L'applicativo non è fornito di lato BE.
 
 /*
  * For easier debugging in development mode, you can import the following file

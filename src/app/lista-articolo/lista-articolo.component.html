@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="mt-5">
+        <h3> Exam Shop! </h3>
+        <p>Compra gli articoli che vuoi, comodamente a casa tua!</p>
+    </div>
+</div>
+
+<a class="nav-link btn btn-success mt-5 ms-5 mb-4 text-white" style="width: 15%;" [routerLink]="['/nuovoArticolo']">Nuovo Prodotto</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Recensione</th>
+            <th scope="col">Modifica</th>
+            <th scope="col">Elimina</th>
+            <th scope="col">Recensioni</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let articolo of articoli; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ articolo.id }}</td>
+            <td>{{ articolo.nome}}</td>
+            <td>{{ articolo.costo | currency: 'EUR':'symbol':'3.2-2':'fr'}}</td>
+            <td><button type="button" class="btn btn-warning mt-2" (click)="editArticolo(articolo.id)">Modifica</button></td>
+            <td><button type="button" class="btn btn-danger mt-2" (click)="deleteArticolo(articolo.id)">Elimina</button></td>
+            <td><button type="button" class="btn btn-danger mt-2" (click)="goRecensioni(articolo.id)">Recensioni</button></td>
+        </tr>
+    </tbody>
+
+</table>
